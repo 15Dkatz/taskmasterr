@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
       store.set('profile', profile);
       store.set('token', idToken);
       store.set('refreshToken', refreshToken);
-      $state.go('tab.dash');
+      $state.go('tab.build');
     }, function(error) {
       console.log("There was an error logging in", error);
     });
@@ -53,29 +53,29 @@ angular.module('starter.controllers', [])
 })
 
 .controller('DashCtrl', function($scope, $http) {
-  $scope.callApi = function() {
-    // Just call the API as you'd do using $http
-    $http({
-      url: 'http://auth0-nodejsapi-sample.herokuapp.com/secured/ping',
-      method: 'GET'
-    }).then(function() {
-      alert("We got the secured data successfully");
-    }, function() {
-      alert("Please download the API seed so that you can call it.");
-    });
-  };
+  // $scope.callApi = function() {
+  //   // Just call the API as you'd do using $http
+  //   $http({
+  //     url: 'http://auth0-nodejsapi-sample.herokuapp.com/secured/ping',
+  //     method: 'GET'
+  //   }).then(function() {
+  //     alert("We got the secured data successfully");
+  //   }, function() {
+  //     alert("Please download the API seed so that you can call it.");
+  //   });
+  // };
 
 })
 
 .controller('BuildCtrl', function($scope, Chats) {
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  }
+  // $scope.chats = Chats.all();
+  // $scope.remove = function(chat) {
+  //   Chats.remove(chat);
+  // }
 })
 
 .controller('SetCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+  // $scope.chat = Chats.get($stateParams.chatId);
 })
 
 .controller('AccountCtrl', function($scope, auth, store, $state) {
