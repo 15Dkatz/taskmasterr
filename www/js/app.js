@@ -78,36 +78,37 @@ angular.module('starter', ['ionic',
     }
   })
 
-  // Each tab has its own nav history stack:
+  // Each tab has its own nav history stackkey: "value", 
+  .state('tab.build', {
+      url: '/build',
+      views: {
+        'tab-build': {
+          templateUrl: 'templates/tab-build.html',
+          controller: 'BuildCtrl'
+        }
+      }
+    })
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.set', {
+    url: '/set',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-set': {
+        templateUrl: 'templates/tab-set.html',
+        controller: 'SetCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
+  
+    // .state('tab.chat-detail', {
+    //   url: '/chats/:chatId',
+    //   views: {
+    //     'tab-chats': {
+    //       templateUrl: 'templates/chat-detail.html',
+    //       controller: 'ChatDetailCtrl'
+    //     }
+    //   }
+    // })
 
   .state('tab.account', {
     url: '/account',
